@@ -9,15 +9,6 @@ namespace DcsTest2
 {
     public partial class _Default : Page
     {
-        //[Serializable]
-        //public class Supplier
-        //{
-        //    public string Id { get; set; }
-        //    public string Name { get; set; }
-        //    public decimal Brutto { get; set; }
-        //    public decimal Netto { get; set; }
-        //}
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -50,7 +41,6 @@ namespace DcsTest2
        
             }
 
-            //List<Supplier> suppliers = new List<Supplier>();
             webTestService.Supplier[] suppliers = new webTestService.Supplier[3];
             suppliers[0] = new webTestService.Supplier();
             suppliers[1] = new webTestService.Supplier();
@@ -90,28 +80,5 @@ namespace DcsTest2
 
         }
 
-        //protected void Button3_Click(object sender, EventArgs e)
-        //{
-        //    Supplier supplier = new Supplier();
-        //    List<Supplier> suppliers = new List<Supplier>();
-        //    supplier.Id = Text1.Value;
-        //    supplier.Name = Text2.Value;
-        //    supplier.Brutto = decimal.Parse(Text3.Value);
-        //    supplier.Netto = decimal.Parse(Text4.Value);
-
-        //    suppliers.Add(supplier);
-        //    foreach (Supplier aPart in suppliers)
-        //    {
-        //        Console.WriteLine(aPart);
-        //    }
-
-        //    Text1.Value = "";
-        //    Text2.Value = "";
-        //    Text3.Value = "";
-        //    Text4.Value = "";
-
-
-
-        //}
     }
 }
