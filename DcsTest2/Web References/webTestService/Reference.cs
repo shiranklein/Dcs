@@ -107,16 +107,10 @@ namespace DcsTest2.webTestService {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SuppliersGain", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public SupplierGain[] SuppliersGain(string iUserName, string iPassword, Supplier[] Suppliers) {
-            System.Diagnostics.Debug.WriteLine("aviad1: " + Suppliers);
-            System.Diagnostics.Debug.WriteLine("user: " + iUserName);
-            System.Diagnostics.Debug.WriteLine("pass: " + iPassword);
             object[] results = this.Invoke("SuppliersGain", new object[] {
                         iUserName,
                         iPassword,
                         Suppliers});
-            System.Diagnostics.Debug.WriteLine("aviad: " + results);
-            System.Diagnostics.Debug.WriteLine("aviad: " + results[0]);
-            System.Diagnostics.Debug.WriteLine("aviad3: " + (SupplierGain[])(results[0]));
             return ((SupplierGain[])(results[0]));
         }
         
