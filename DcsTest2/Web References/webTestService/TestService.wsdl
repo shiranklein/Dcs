@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetUsernameAndPassword">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUsernameAndPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsernameAndPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SuppliersGain">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Suppliers" type="tns:ArrayOfSupplier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSupplier">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Supplier" nillable="true" type="tns:Supplier" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Supplier">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Brutto" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Netto" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SuppliersGainResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SuppliersGainResult" type="tns:ArrayOfSupplierGain" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSupplierGain">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SupplierGain" nillable="true" type="tns:SupplierGain" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SupplierGain">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalGain" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetUsernameAndPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsernameAndPassword" />
+  </wsdl:message>
+  <wsdl:message name="GetUsernameAndPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsernameAndPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SuppliersGainSoapIn">
+    <wsdl:part name="parameters" element="tns:SuppliersGain" />
+  </wsdl:message>
+  <wsdl:message name="SuppliersGainSoapOut">
+    <wsdl:part name="parameters" element="tns:SuppliersGainResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsernameAndPasswordHttpGetIn" />
+  <wsdl:message name="GetUsernameAndPasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUsernameAndPasswordHttpPostIn" />
+  <wsdl:message name="GetUsernameAndPasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="TestServiceSoap">
+    <wsdl:operation name="GetUsernameAndPassword">
+      <wsdl:input message="tns:GetUsernameAndPasswordSoapIn" />
+      <wsdl:output message="tns:GetUsernameAndPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SuppliersGain">
+      <wsdl:input message="tns:SuppliersGainSoapIn" />
+      <wsdl:output message="tns:SuppliersGainSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TestServiceHttpGet">
+    <wsdl:operation name="GetUsernameAndPassword">
+      <wsdl:input message="tns:GetUsernameAndPasswordHttpGetIn" />
+      <wsdl:output message="tns:GetUsernameAndPasswordHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TestServiceHttpPost">
+    <wsdl:operation name="GetUsernameAndPassword">
+      <wsdl:input message="tns:GetUsernameAndPasswordHttpPostIn" />
+      <wsdl:output message="tns:GetUsernameAndPasswordHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TestServiceSoap" type="tns:TestServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUsernameAndPassword">
+      <soap:operation soapAction="http://tempuri.org/GetUsernameAndPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuppliersGain">
+      <soap:operation soapAction="http://tempuri.org/SuppliersGain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TestServiceSoap12" type="tns:TestServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUsernameAndPassword">
+      <soap12:operation soapAction="http://tempuri.org/GetUsernameAndPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuppliersGain">
+      <soap12:operation soapAction="http://tempuri.org/SuppliersGain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TestServiceHttpGet" type="tns:TestServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetUsernameAndPassword">
+      <http:operation location="/GetUsernameAndPassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TestServiceHttpPost" type="tns:TestServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetUsernameAndPassword">
+      <http:operation location="/GetUsernameAndPassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TestService">
+    <wsdl:port name="TestServiceSoap" binding="tns:TestServiceSoap">
+      <soap:address location="http://web27.agency2000.co.il/Test/TestService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TestServiceSoap12" binding="tns:TestServiceSoap12">
+      <soap12:address location="http://web27.agency2000.co.il/Test/TestService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TestServiceHttpGet" binding="tns:TestServiceHttpGet">
+      <http:address location="http://web27.agency2000.co.il/Test/TestService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TestServiceHttpPost" binding="tns:TestServiceHttpPost">
+      <http:address location="http://web27.agency2000.co.il/Test/TestService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
