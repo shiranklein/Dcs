@@ -220,3 +220,28 @@ C:\Users\Softov\Desktop\gitDcs\DcsTest2\obj\Debug\DcsTest2.csproj.CoreCompileInp
 C:\Users\Softov\Desktop\gitDcs\DcsTest2\obj\Debug\DcsTest2.csproj.CopyComplete
 C:\Users\Softov\Desktop\gitDcs\DcsTest2\obj\Debug\DcsTest2.dll
 C:\Users\Softov\Desktop\gitDcs\DcsTest2\obj\Debug\DcsTest2.pdb
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\DcsTest2.dll.config
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\DcsTest2.dll
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\DcsTest2.pdb
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\Antlr3.Runtime.dll
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\Newtonsoft.Json.dll
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\System.Web.Optimization.dll
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\WebGrease.dll
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\System.Web.Optimization.xml
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\Newtonsoft.Json.xml
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\Antlr3.Runtime.pdb
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\shira\Desktop\New folder\DcsTest2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\shira\Desktop\New folder\DcsTest2\obj\Debug\DcsTest2.csprojAssemblyReference.cache
+C:\Users\shira\Desktop\New folder\DcsTest2\obj\Debug\DcsTest2.csproj.CoreCompileInputs.cache
+C:\Users\shira\Desktop\New folder\DcsTest2\obj\Debug\DcsTest2.csproj.CopyComplete
+C:\Users\shira\Desktop\New folder\DcsTest2\obj\Debug\DcsTest2.dll
+C:\Users\shira\Desktop\New folder\DcsTest2\obj\Debug\DcsTest2.pdb
